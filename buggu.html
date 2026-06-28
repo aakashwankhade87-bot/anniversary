@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy 2nd Anniversary ❤️</title>
+<link rel="icon" type="image/x-icon" href="assets/heart.png">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    -webkit-tap-highlight-color:transparent;
+    -webkit-overflow-scrolling:touch;
+}
+
+body{
+    min-height:100vh;
+    background:linear-gradient(45deg,#620080 25%,#8a2be2 75%);
+    font-family:'Courier New',monospace;
+    overflow:hidden;
+    position:relative;
+    color:white;
+
+    -webkit-backface-visibility:hidden;
+    backface-visibility:hidden;
+    transform:translateZ(0);
+}
+
+body::before{
+    content:'';
+    position:fixed;
+    width:100%;
+    height:100%;
+    background-image:url("data:image/svg+xml,%3Csvg width='52' height='52' viewBox='0 0 52 52' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M26 35.5C17.6 35.5 4 29.5 4 17.5 4 9.5 11.7 3 21.5 3c5.1 0 8.7 2.5 11.5 6 2.8-3.5 6.4-6 11.5-6C40.3 3 48 9.5 48 17.5c0 12-13.6 18-22 18z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+    z-index:-1;
+}
+
+.message-container{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:90%;
+    max-width:800px;
+    text-align:center;
+}
+
+.message{
+    position:absolute;
+    width:100%;
+    opacity:0;
+    transform:translateY(40px);
+    transition:all 1.4s ease;
+    font-size:2.5rem;
+    text-shadow:0 0 15px rgba(255,255,255,.4);
+}
+
+.message.active{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.message.exit{
+    opacity:0;
+    transform:translateY(-40px) scale(.9);
+}
+
+.final-question{
+    display:none;
+    opacity:0;
+    transform:scale(.5);
+    animation:reveal 1s forwards;
+}
+
+@keyframes reveal{
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+.btn-group{
+    margin-top:35px;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.valentine-btn{
+    padding:15px 35px;
+    border:none;
+    border-radius:50px;
+    cursor:pointer;
+    font-size:1.2rem;
+    transition:.3s;
+    color:white;
+}
+
+.yes-btn{
+    background:#ff4081;
+}
+
+.no-btn{
+    background:#666;
+}
+
+.valentine-btn:hover{
+    transform:translateY(-4px);
+    box-shadow:0 8px 20px rgba(255,64,129,.4);
+}
+
+/* Next Button */
+
+.next-page{
+    margin-top:40px;
+    display:none;
+}
+
+.next-btn{
+    padding:15px 40px;
+    border:none;
+    border-radius:50px;
+    cursor:pointer;
+    color:white;
+    font-size:20px;
+    font-weight:bold;
+    background:linear-gradient(135deg,#ff4b91,#ff8fab);
+    transition:.3s;
+}
+
+.next-btn:hover{
+    transform:translateY(-4px) scale(1.05);
+}
+
+/* Floating emojis */
+
+.love-particle{
+    position:absolute;
+    font-size:25px;
+    animation:float linear infinite;
+}
+
+@keyframes float{
+
+0%{
+    transform:translateY(100vh) rotate(0deg);
+    opacity:1;
+}
+
+100%{
+    transform:translateY(-120vh) rotate(360deg);
+    opacity:0;
+}
+
+}
+
+/* Celebration */
+
+.celebration{
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    pointer-events:none;
+    display:none;
+}
+
+.heart-burst{
+    position:absolute;
+    font-size:35px;
+    animation:burst 1s forwards;
+}
+
+@keyframes burst{
+
+0%{
+    transform:scale(0);
+    opacity:1;
+}
+
+100%{
+    transform:scale(5);
+    opacity:0;
+}
+
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.message{
+    font-size:1.8rem;
+}
+
+.valentine-btn{
+    font-size:1rem;
+    padding:12px 22px;
+}
+
+.next-btn{
+    font-size:18px;
+}
+
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- Background Music -->
+
+<audio id="bg-music" loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<div class="message-container">
+
+    <div class="message">Every moment with you...</div>
+
+    <div class="message">Feels like a fairy tale ✨</div>
+
+    <div class="message">You're my forever spark 🌟</div>
+
+    <div class="message">This Anniversary...</div>
+
+    <div class="message">Will you promise to become mine forever? ❤️</div>
+
+    <div class="message">Please...? 🥺</div>
+
+    <div class="final-question">
+
+        <h2>Will You Be My Karbharin Bai? ❤️</h2>
+
+        <div class="btn-group">
+
+            <button class="valentine-btn yes-btn">
+                Yes, Always! 🌹
+            </button>
+
+            <button class="valentine-btn no-btn">
+                Still Thinking 💭
+            </button>
+
+        </div>
+
+        <div class="next-page">
+
+            <button class="next-btn"
+                onclick="window.location.href='bubu.html'">
+
+                Next ➜
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="celebration"></div>
+
+<script>// ===============================
+// Floating Love Particles
+// ===============================
+
+const emojis = ["❤️", "💖", "💞", "💕", "🌹", "✨"];
+
+function createParticles() {
+
+    const particle = document.createElement("div");
+
+    particle.className = "love-particle";
+    particle.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
+
+    particle.style.left = Math.random() * 100 + "%";
+    particle.style.animationDuration = (Math.random() * 3 + 4) + "s";
+    particle.style.fontSize = (Math.random() * 15 + 20) + "px";
+
+    document.body.appendChild(particle);
+
+    setTimeout(() => {
+        particle.remove();
+    }, 7000);
+}
+
+setInterval(createParticles, 400);
+
+
+// ===============================
+// Message Animation
+// ===============================
+
+const messages = document.querySelectorAll(".message");
+const finalQuestion = document.querySelector(".final-question");
+
+let current = 0;
+
+function showMessages() {
+
+    if (current > 0) {
+        messages[current - 1].classList.remove("active");
+        messages[current - 1].classList.add("exit");
+    }
+
+    if (current < messages.length) {
+
+        messages[current].classList.add("active");
+
+        current++;
+
+        setTimeout(showMessages, 3000);
+
+    } else {
+
+        finalQuestion.style.display = "block";
+
+        setTimeout(() => {
+            finalQuestion.style.opacity = "1";
+        }, 100);
+
+    }
+
+}
+
+setTimeout(showMessages, 1200);
+
+
+// ===============================
+// Background Music
+// ===============================
+
+document.addEventListener(
+    "click",
+    () => {
+        document.getElementById("bg-music").play();
+    },
+    { once: true }
+);
+
+
+// ===============================
+// YES Button
+// ===============================
+
+const yesBtn = document.querySelector(".yes-btn");
+
+yesBtn.addEventListener("click", () => {
+
+    const celebration = document.querySelector(".celebration");
+
+    celebration.style.display = "block";
+
+    for (let i = 0; i < 60; i++) {
+
+        const heart = document.createElement("div");
+
+        heart.className = "heart-burst";
+
+        heart.innerHTML = "❤️";
+
+        heart.style.left = Math.random() * 100 + "%";
+        heart.style.top = Math.random() * 100 + "%";
+        heart.style.animationDelay = Math.random() * 0.5 + "s";
+
+        celebration.appendChild(heart);
+
+    }
+
+    document.querySelector(".btn-group").style.display = "none";
+
+    finalQuestion.querySelector("h2").innerHTML =
+        "🎉 Yay!! You Made Me The Happiest Person ❤️";
+
+    const text = document.createElement("p");
+
+    text.innerHTML =
+        "<br>I promise to love you forever 💖<br><br>";
+
+    text.style.fontSize = "22px";
+
+    finalQuestion.appendChild(text);
+
+    document.querySelector(".next-page").style.display = "block";
+
+});
+
+
+// ===============================
+// NO Button Escapes
+// ===============================
+
+const noBtn = document.querySelector(".no-btn");
+
+function moveButton() {
+
+    const x = Math.random() * 250 - 125;
+    const y = Math.random() * 250 - 125;
+
+    noBtn.style.transform =
+        `translate(${x}px, ${y}px) rotate(${Math.random() * 360}deg)`;
+
+}
+
+noBtn.addEventListener("mouseover", moveButton);
+
+noBtn.addEventListener("touchstart", function(e) {
+
+    e.preventDefault();
+
+    moveButton();
+
+});
+
+</script>
+</body>
+
+</html>

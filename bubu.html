@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 2nd Anniversary ❤️</title>
+    <style>
+        /* Core Design System and Global Styles */
+        :root {
+            --background-color: #1a1a1a;
+            --text-color: #e0e0e0;
+            --header-font: 'Times New Roman', Times, serif;
+            --body-font: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            --accent-color: #ffab76;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            font-family: var(--body-font);
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* The Guided Emotional Journey Structure */
+        .journey-section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            box-sizing: border-box;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+
+        .journey-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Typography and Content Styling */
+        h1, h2 {
+            font-family: var(--header-font);
+            color: var(--accent-color);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            max-width: 800px;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        /* Image and Gallery Styling */
+        .image-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 2rem 0;
+            border: 2px solid var(--accent-color);
+            padding: 10px;
+            box-shadow: 0 0 15px var(--accent-color);
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            max-width: 1000px;
+        }
+        
+        .gallery-item {
+            flex: 1 1 300px;
+            border: 2px solid var(--accent-color);
+            padding: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            display: block;
+        }
+
+        /* Final Message Styling */
+        .final-message {
+            border: 2px solid var(--accent-color);
+            padding: 2rem;
+            margin-top: 2rem;
+            box-shadow: 0 0 20px var(--accent-color);
+            background-color: rgba(255, 171, 118, 0.1);
+            border-radius: 10px;
+        }
+
+        .next-btn {
+    display: block;
+    margin: 70px auto;
+    padding: 16px 50px;
+    font-size: 1.3rem;
+    font-family: 'Times New Roman', serif;
+    color: var(--accent-color);
+    background: transparent;
+    border: 2px solid var(--accent-color);
+    border-radius: 40px;
+    cursor: pointer;
+    transition: 0.4s;
+    box-shadow: 0 0 15px rgba(255,171,118,0.3);
+}
+
+.next-btn:hover {
+    background: var(--accent-color);
+    color: #1a1a1a;
+    box-shadow: 0 0 25px var(--accent-color);
+    transform: translateY(-3px);
+}
+
+    </style>
+</head>
+<body>
+
+
+    <audio id="bg-music" loop>
+    <source src="muzix.mp3" type="audio/mpeg">
+</audio>
+    <!-- Section 1: Introduction -->
+    <section class="journey-section">
+        <h1>Happy Anniversary, My Love</h1>
+        <p>A journey through our story, written in the stars and now, on this page.</p>
+        <div class="image-container">
+            <!-- Replace with a favorite photo of you two -->
+            <img src="img/image.png" alt="The day we first met">
+        </div>
+        <p>Scroll down to begin...</p>
+    </section>
+
+    <!-- Section 2: The Beginning -->
+    <section class="journey-section">
+        <h2>The Day Our Story Began</h2>
+        <p>Do you remember when we first met? It feels like a lifetime ago, yet also just yesterday. That moment is etched in my memory, a beautiful beginning to our adventure.</p>
+        <!-- Replace with a photo from the early days of your relationship -->
+        <div class="image-container">
+            <img src="img/image2.png" alt="A couple's early days">
+        </div>
+    </section>
+
+    <!-- Section 3: Our Adventures -->
+    <section class="journey-section">
+        <h2>A Tapestry of Memories</h2>
+        <p>We've shared so many incredible moments. From the quiet evenings to the grand adventures, each one is a thread in the beautiful tapestry of our life together.</p>
+        <div class="gallery">
+            <!-- Replace with your favorite photos together -->
+            <div class="gallery-item"><img src="img/image3.png" alt="Adventure 1"></div>
+            <div class="gallery-item"><img src="img/image4.png" alt="Adventure 2"></div>
+            <div class="gallery-item"><img src="img/image5.png" alt="Adventure 3"></div>
+        </div>
+    </section>
+    
+    <!-- Section 4: What I Love About You -->
+    <section class="journey-section">
+        <h2>The Reasons I Adore You</h2>
+        <p>Every day, I discover new reasons to love you. It’s in the way you laugh, the kindness you show, and the unwavering support you give me. You are my greatest inspiration.</p>
+         <div class="image-container">
+             <!-- Replace with a favorite photo of your partner -->
+            <img src="img/image6.png" alt=" My loved one">
+        </div>
+    </section>
+
+    <!-- Section 5: Our Future -->
+    <section class="journey-section">
+        <h2>To Our Future</h2>
+        <p>As we celebrate this milestone, I find myself even more excited for what's to come. Here's to many more years of love, laughter, and building our dreams together.</p>
+        <div class="image-container">
+            <!-- Replace with a photo that represents your future dreams -->
+           <img src="img/image7.png" alt="Looking towards the future">
+       </div>
+    </section>
+
+    <!-- Section 6: A Final Message -->
+    <section class="journey-section">
+        <div class="final-message">
+            <h2>From My Heart to Yours</h2>
+            <p>Every love story is beautiful, but ours is my favorite. Thank you for being you, and for being mine. Happy Anniversary, with all my love, forever and always
+i love you babeee❤❤😘.</p>
+        </div>
+        <div class="image-container">
+            <!-- Replace with a photo that represents your future dreams -->
+           <img src="img/image8.png" alt="Looking towards the future">
+       </div>
+    </section>
+
+
+    
+            <button class="next-btn"
+                onclick="window.location.href='mimi.html'">
+
+                Next ➜
+
+            </button>
+
+    <script>
+        // JavaScript for Interactive Animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.journey-section');
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+
+
+<script>
+    
+document.addEventListener(
+    "click",
+    () => {
+        document.getElementById("bg-music").play();
+    },
+    { once: true }
+);
+
+</script>
+</body>
+</html>

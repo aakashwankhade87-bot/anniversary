@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy 2nd Anniversary ❤️</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #0d1b4d 0%, #34206b 45%, #6b2fa3 100%);
+      color: white;
+      overflow-x: hidden;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: none;
+      padding: 30px 20px;
+    }
+
+    .page.active {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      animation: fadeIn 0.9s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero {
+      text-align: center;
+      max-width: 1000px;
+      width: 100%;
+    }
+
+    .title {
+      font-size: clamp(2.1rem, 5vw, 4rem);
+      margin-bottom: 10px;
+      text-shadow: 0 0 15px rgba(173, 216, 255, 0.45);
+      color: #f8f5ff;
+    }
+
+    .subtitle {
+      font-size: clamp(1rem, 2vw, 1.3rem);
+      color: #d7d4ff;
+      margin-bottom: 35px;
+    }
+
+    .scene-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 50px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+
+.bouquet-only{
+    position:relative;
+    width:160px;
+    height:220px;
+    cursor:pointer;
+    display:flex;
+    justify-content:center;
+    align-items:flex-end;
+}
+
+.flower{
+    position:absolute;
+    width:54px;
+    height:54px;
+    transition:transform .8s ease;
+}
+
+.flower.center {
+    top: 35px;
+    left: 53px;
+}
+
+.flower.left {
+    top: 70px;
+    left: 10px;
+}
+
+.flower.right {
+    top: 70px;
+    right: 10px;
+}
+
+.flower.top {
+    top: 0;
+    left: 83px;
+}
+    .petals {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 50% 8%, #ffd84f 0 18%, transparent 19%),
+        radial-gradient(circle at 83% 28%, #ffd84f 0 18%, transparent 19%),
+        radial-gradient(circle at 92% 58%, #ffd84f 0 18%, transparent 19%),
+        radial-gradient(circle at 74% 84%, #ffd84f 0 18%, transparent 19%),
+        radial-gradient(circle at 50% 94%, #ffd84f 0 18%, transparent 19%),
+        radial-gradient(circle at 26% 84%, #ffd84f 0 18%, transparent 19%),
+        radial-gradient(circle at 8% 58%, #ffd84f 0 18%, transparent 19%),
+        radial-gradient(circle at 16% 28%, #ffd84f 0 18%, transparent 19%);
+    }
+
+    .center-seed {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 24px;
+      height: 24px;
+      background: #5a3516;
+      border-radius: 50%;
+      box-shadow: inset 0 0 0 4px #76471d;
+    }
+
+    .stem {
+      position: absolute;
+      width: 5px;
+      height: 60px;
+      background: #4da04d;
+      left: 50%;
+      top: 44px;
+      transform: translateX(-50%);
+      z-index: -1;
+    }
+
+    .wrap {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 110px;
+      height: 95px;
+      background: linear-gradient(180deg, rgba(195, 213, 255, 0.8), rgba(151, 167, 255, 0.55));
+      clip-path: polygon(8% 0%, 92% 0%, 68% 100%, 32% 100%);
+      border: 2px solid rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(4px);
+    }
+
+    .ribbon {
+      position: absolute;
+      bottom: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 44px;
+      height: 16px;
+      background: linear-gradient(90deg, #55aaff, #8a63ff);
+      border-radius: 10px;
+      z-index: 2;
+    }
+
+    .romantic-box {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 24px;
+      padding: 24px;
+      max-width: 420px;
+      text-align: center;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+    }
+
+    .romantic-box p {
+      line-height: 1.6;
+      color: #ece8ff;
+      margin-bottom: 18px;
+    }
+
+    .hint {
+      font-size: 0.95rem;
+      color: #bfc6ff;
+      margin-bottom: 16px;
+    }
+
+    .btn {
+      background: linear-gradient(90deg, #4f8cff, #8f52ff);
+      color: white;
+      border: none;
+      padding: 14px 24px;
+      border-radius: 999px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      box-shadow: 0 10px 22px rgba(91, 96, 255, 0.35);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px) scale(1.02);
+    }
+
+    .floating-kiss {
+      position: fixed;
+      font-size: 26px;
+      opacity: 0.8;
+      animation: floatUp 8s linear infinite;
+      pointer-events: none;
+      filter: drop-shadow(0 0 8px rgba(131, 110, 255, 0.45));
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(110vh) scale(0.8) rotate(0deg);
+        opacity: 0;
+      }
+      15% { opacity: 0.85; }
+      100% {
+        transform: translateY(-20vh) scale(1.2) rotate(12deg);
+        opacity: 0;
+      }
+    }
+
+    .memories-container {
+      width: 100%;
+      max-width: 1200px;
+      text-align: center;
+    }
+
+    .memories-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 12px;
+    }
+
+    .memories-subtitle {
+      color: #ddd7ff;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+
+    .doors-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      width: 100%;
+    }
+
+    .door-card {
+      perspective: 1200px;
+      min-height: 220px;
+    }
+
+    .door-inner {
+      position: relative;
+      width: 100%;
+      min-height: 220px;
+      transition: transform 0.9s;
+      transform-style: preserve-3d;
+      cursor: pointer;
+    }
+
+    .door-card.open .door-inner {
+      transform: rotateY(180deg);
+    }
+
+    .door-front,
+    .door-back {
+      position: absolute;
+      width: 100%;
+      min-height: 220px;
+      border-radius: 22px;
+      backface-visibility: hidden;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+    }
+
+    .door-front {
+      background: linear-gradient(160deg, rgba(80, 125, 255, 0.9), rgba(121, 63, 213, 0.9));
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .door-front .door-number {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .door-front .door-label {
+      color: #f2ecff;
+      font-size: 1rem;
+    }
+
+    .door-back {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      transform: rotateY(180deg);
+      justify-content: flex-start;
+      text-align: left;
+      backdrop-filter: blur(10px);
+    }
+
+    .door-back h3 {
+      width: 100%;
+      margin-bottom: 10px;
+      color: #ffffff;
+      text-align: center;
+    }
+
+    .door-back textarea {
+      width: 100%;
+      min-height: 120px;
+      resize: none;
+      border: none;
+      outline: none;
+      border-radius: 14px;
+      padding: 12px;
+      background: rgba(255, 255, 255, 0.9);
+      color: #1c2147;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .small-note {
+      margin-top: 8px;
+      font-size: 0.85rem;
+      color: #d9d0ff;
+      text-align: center;
+    }
+
+    .top-actions {
+      margin-top: 15px;
+      margin-bottom: 28px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+    }
+
+    .secondary-btn {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: white;
+      padding: 12px 18px;
+      border-radius: 999px;
+      cursor: pointer;
+    }
+
+    .next-btn{
+      display:inline-block;
+      text-decoration:none;
+      color:white;
+    }
+
+    .pulled {
+      transform: translateY(-70px) rotate(-8deg) !important;
+    }
+
+    .hidden {
+      display: none;
+    }
+    
+    .character-area {
+        width: 260px;
+        height: 320px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    @media (max-width: 700px) {
+      .scene-wrapper {
+        gap: 20px;
+      }
+
+      .romantic-box {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="floating-kiss" style="left: 8%; animation-delay: 0s;">💋</div>
+  <div class="floating-kiss" style="left: 22%; animation-delay: 2s;">💙</div>
+  <div class="floating-kiss" style="left: 38%; animation-delay: 1s;">💜</div>
+  <div class="floating-kiss" style="left: 54%; animation-delay: 3s;">💋</div>
+  <div class="floating-kiss" style="left: 72%; animation-delay: 1.5s;">💙</div>
+  <div class="floating-kiss" style="left: 88%; animation-delay: 4s;">💜</div>
+
+  <section id="landingPage" class="page active">
+    <div class="hero">
+      <h1 class="title">Happy 2nd Anniversary 💙💜</h1>
+      <p class="subtitle">A small sweet place just for us, for our first month together.</p>
+
+      <div class="scene-wrapper">
+<div class="character-area">
+  <div class="bouquet-only" id="bouquet">
+    <div class="flower center" id="pullFlower">
+      <div class="petals"></div>
+      <div class="center-seed"></div>
+      <div class="stem"></div>
+    </div>
+
+    <div class="flower left">
+      <div class="petals"></div>
+      <div class="center-seed"></div>
+      <div class="stem"></div>
+    </div>
+
+    <div class="flower right">
+      <div class="petals"></div>
+      <div class="center-seed"></div>
+      <div class="stem"></div>
+    </div>
+
+    <div class="flower top">
+      <div class="petals"></div>
+      <div class="center-seed"></div>
+      <div class="stem"></div>
+    </div>
+
+    <div class="wrap"></div>
+    <div class="ribbon"></div>
+  </div>
+</div>
+        <div class="romantic-box">
+          <p>
+            This little page was made for you 
+            with lots of small doors full of memories,
+            beautiful moments, and all the things that remind me of you.
+          </p>
+          <p class="hint">First, pull one sunflower out of the bouquet 🌻</p>
+          <button class="btn hidden" id="continueBtn">Continue</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="memoriesPage" class="page">
+    <div class="memories-container">
+      <h2 class="memories-title">Our Little Moments ❤️</h2>
+      <p class="memories-subtitle">
+        Click on a door and find a beautiful memory behind it.<br>
+      </p>
+
+<div class="top-actions">
+    <button class="secondary-btn" id="openAllBtn">Open All</button>
+    <button class="secondary-btn" id="closeAllBtn">Close All</button>
+
+    <a href="./buggu.html" class="secondary-btn next-btn">Next →</a>
+</div>
+
+      <div class="doors-grid" id="doorsGrid"></div>
+    </div>
+  </section>
+
+  <script>
+    const memories = [
+      "Cipet ke entrance ke din jab apan line me lage the or meri shadow me chup gyi thi",
+      "jab sir ne sanskrit ke paper check karne diye the tab me ek baar chowmin leke aaya tha mene teko apne hatho se khilai thi thodi privacy me !",
+      "mere bday se pehle meko tera hotspot ka password pata chala tha",
+      "mere bday ke 2 din baad mene teko cabin me apne hato se chips khilaye the",
+      "31st december ko apan ne call pe baat ki thi or sari memories recall ki thi",
+      "tune meko pani puri khiyali thi sofa pe ",
+      "jab tu mere hath pe ninni karti thi ",
+      "ek baar me bahut rooya tha tere hatho pe",
+      "apan i love you spam karte the chats pe",
+      "tu thodi out of control si hogyi thi 14th feb ko rap sunne ke baad",
+      "tune meko gobhi khilayi thi apne hatho se ",
+      "tu mere hatho pe kissi karne ka ek bhi moment skip nhi karti thi"
+    ];
+
+    const landingPage = document.getElementById("landingPage");
+    const memoriesPage = document.getElementById("memoriesPage");
+    const continueBtn = document.getElementById("continueBtn");
+    const pullFlower = document.getElementById("pullFlower");
+    const bouquet = document.getElementById("bouquet");
+    const doorsGrid = document.getElementById("doorsGrid");
+    const openAllBtn = document.getElementById("openAllBtn");
+    const closeAllBtn = document.getElementById("closeAllBtn");
+
+    let flowerPulled = false;
+
+    function createDoors() {
+      memories.forEach((text, index) => {
+        const card = document.createElement("div");
+        card.className = "door-card";
+
+        card.innerHTML = `
+          <div class="door-inner">
+            <div class="door-front">
+              <div class="door-number">${index + 1}</div>
+              <div class="door-label">Open me 💙💜</div>
+            </div>
+            <div class="door-back">
+              <h3>Memory ${index + 1}</h3>
+              <textarea>${text}</textarea>
+              <div class="small-note"></div>
+            </div>
+          </div>
+        `;
+
+        card.addEventListener("click", (e) => {
+          if (e.target.tagName.toLowerCase() !== "textarea") {
+            card.classList.toggle("open");
+          }
+        });
+
+        doorsGrid.appendChild(card);
+      });
+    }
+
+    function goToMemories() {
+      landingPage.classList.remove("active");
+      memoriesPage.classList.add("active");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    bouquet.addEventListener("click", () => {
+      if (!flowerPulled) {
+        pullFlower.classList.add("pulled");
+        continueBtn.classList.remove("hidden");
+        flowerPulled = true;
+      }
+    });
+
+    continueBtn.addEventListener("click", goToMemories);
+
+    openAllBtn.addEventListener("click", () => {
+      document.querySelectorAll(".door-card").forEach(card => card.classList.add("open"));
+    });
+
+    closeAllBtn.addEventListener("click", () => {
+      document.querySelectorAll(".door-card").forEach(card => card.classList.remove("open"));
+    });
+
+    createDoors();
+  </script>
+</body>
+</html>
