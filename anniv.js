@@ -63,9 +63,14 @@ document.getElementById("kadoIn").onclick = function() {if(fungsiAwal==0){audio.
   function bqhilang(){wallpaper.style="transform: scale(2);";bodyblur.style="opacity:.5";bq.style = "position:relative;transition:all .7s ease;";}
   
   function tombol(){Tombol.style="opacity:1;transform: scale(1);";fungsi=1}
-  document.getElementById("By").onclick = function() {if(fungsi==1){menuju();}}
-  async function menuju(){window.location = "https://api.whatsapp.com/send?phone=&text=" + pesanwhatsapp;}
+  document.getElementById("By").onclick = function(e) {
+      if (fungsi != 1) {
+          e.preventDefault(); // Ignore clicks until the button is ready
+          return;
+      }
 
+      window.location.href = "panda.html";
+  };
   opsLclick=0;opsLcheck=0;
   document.getElementById("bq").onclick = function() {
     if(opsLclick==1){
